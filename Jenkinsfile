@@ -15,6 +15,11 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+              expression {
+                return (sh(script:"true", returnStatus: true) == 0)
+              }
+            }
             steps {
                 echo 'Deploying....'
             }

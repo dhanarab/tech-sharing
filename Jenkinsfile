@@ -5,6 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'echo ABC > result.txt'
+                archiveArtifacts artifacts: 'result.txt', fingerprint: true
             }
         }
         stage('Test') {

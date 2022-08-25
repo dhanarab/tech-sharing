@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy') {
             when {
               expression {
-                return (sh(script:"true", returnStatus: true) == 0)
+                return (sh(script:"false", returnStatus: true) == 0)
               }
             }
             steps {
